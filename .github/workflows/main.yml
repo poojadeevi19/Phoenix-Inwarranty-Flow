@@ -23,10 +23,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install Newman and Htmal-extra globally
+      - name: Install Newman and Html-extra globally
         run: 
              npm install -g newman
-             npm install -g newma-repoter-htmalextra
+             npm install -g newman-repoter-htmlextra
 
       - name: Run the Postman Collection with newman
         run: 
