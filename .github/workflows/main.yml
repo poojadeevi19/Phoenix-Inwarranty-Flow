@@ -33,7 +33,8 @@ jobs:
              newman run 'Inwarranty-flow collection.postman_collection.json' \
              -e QA.postman_environment.json \
              -d testdata.csv \
-             -r cli,htmlextra
+             -r cli,htmlextra \
+             --reporter-htmlextra-export ./newman/html.index
       
       - name: Newman Report
         if: always() # ensure that the archive excuted irrespective whether the previous step has passed or not
@@ -46,7 +47,7 @@ jobs:
         if: always()
         uses: peaceiris/actions-gh-pages@v4.0.0
         with:
-          github_token: ${{ secrets GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: newman/
           
           
