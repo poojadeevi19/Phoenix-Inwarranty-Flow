@@ -8,18 +8,20 @@ on:
     - cron: 30 02 * * * # 8 am IST
     - cron: 00 14 * * * # 730 pm IST
     - cron: 00 06 * * 1-5 # 1130 am IST Monday to Friday
+
 jobs:
   run-postman-tests:
     runs-on: ubuntu-latest
 
     steps:
+    
       - name: Checkout the code
         uses: actions/checkout@v5.0.0
 
       - name: Install Nodejs and npm
-         uses: actions/setup-node@v6.0.0
-         with:
-           node-version: '22'
+        uses: actions/setup-node@v6.0.0
+        with:
+          node-version: '22'
 
       - name: Install Newman and Htmal-extra globally
         run: 
